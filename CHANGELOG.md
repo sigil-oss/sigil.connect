@@ -1,0 +1,5 @@
+# @sigil-oss/connect
+
+All notable changes to this package will be documented in this file.
+
+The format is based on Changesets and follows semver.

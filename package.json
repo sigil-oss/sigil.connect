@@ -1,0 +1,63 @@
+{
+  "name": "@sigil-oss/connect",
+  "version": "0.1.0",
+  "description": "Framework-agnostic TypeScript SDK for launching and signing Sigil deep-link requests.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sigil-oss/sigil.connect.git"
+  },
+  "homepage": "https://github.com/sigil-oss/sigil.connect#readme",
+  "bugs": {
+    "url": "https://github.com/sigil-oss/sigil.connect/issues"
+  },
+  "keywords": [
+    "sigil",
+    "qubic",
+    "wallet",
+    "deeplink",
+    "sdk",
+    "typescript"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "TESTING.md"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "bun": ">=1.1.0",
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "test": "bun test",
+    "check": "bun run lint && bun run test && bun run build",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "prepublishOnly": "bun run check"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "@types/bun": "latest",
+    "typescript": "^5.8.3"
+  }
+}
